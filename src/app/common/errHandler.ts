@@ -8,7 +8,6 @@ export let internalErr =  (err: any, req: Request, res: Response, next: NextFunc
   // render the error page
   res.status(err.status || 500);
   res.render('error');
-  console.log(err);
 };
 
 export let pageNotFoundErr = (req: Request, res: Response, next: NextFunction) => {
