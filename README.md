@@ -13,13 +13,9 @@ or
 npm run build
 ```
 ## Test
-Run unit test.
+Run unit test and generate coverage report.
 ```
 npm test
-```
-Unit test with coverage report
-```
-npm run coverage
 ```
 
 ## Start
