@@ -1,12 +1,35 @@
 {
   "name": "typescript-express-starter",
   "version": "0.0.1",
-  "description": "Node.js express apps with TypeScript",
+  "description": "TypeScript express helloworld project",
   "private": true,
   "scripts": {
     "start": "npm run serve",
-    "serve": "node dist/out-tsc/server"
+    "serve": "node dist/out-tsc/server",
+    "test": "nyc mocha",
+    "build":"tsc -p tsconfig.json"
   },
+  "nyc": {
+    "include": [
+      "src/**/*.ts",
+      "src/**/*.tsx"
+    ],
+    "exclude": [
+      "**/*.d.ts"
+    ],
+    "extension": [
+      ".ts",
+      ".tsx"
+    ],
+    "require": [
+      "ts-node/register"
+    ],
+    "sourceMap": true,
+    "instrument": true,
+    "all": true
+  },
+  "author": "Pan Rufeng",
+  "license": "MIT",
   "dependencies": {
     "cookie-parser": "~1.4.3",
     "debug": "~2.6.9",
@@ -17,11 +40,21 @@
   },
   "devDependencies": {
     "@types/body-parser": "^1.16.8",
+    "@types/chai": "^4.1.7",
+    "@types/chai-http": "^3.0.5",
     "@types/cookie-parser": "^1.4.1",
-    "@types/debug": "0.0.30",
+    "@types/debug": "0.0.31",
     "@types/express": "^4.11.1",
     "@types/http-errors": "^1.6.1",
+    "@types/mocha": "^5.2.5",
     "@types/morgan": "^1.7.35",
-    "typescript": "~2.7.2"
+    "@types/node": "~8.9.4",
+    "chai": "^4.2.0",
+    "chai-http": "^4.2.0",
+    "mocha": "^5.2.0",
+    "nyc": "^13.1.0",
+    "source-map-support": "^0.5.9",
+    "ts-node": "^7.0.1",
+    "typescript": "^2.7.2"
   }
 }
